@@ -7,4 +7,4 @@ script:
 - 'git clone https://github.com/compwj/travis-ci-deploy-ftp.git'
 - 'dir'
 - 'cd travis-ci-deploy-ftp'
-- 'git ftp push --user $username --passwd $password ftp://ptibm.id/apps/demo/travis'
+- 'git ftp push --user $username --passwd $password ftp://ftp.ptibm.id/apps/demo/travis'
