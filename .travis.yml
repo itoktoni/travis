@@ -1,10 +1,8 @@
-install:
-- 'git clone https://github.com/git-ftp/git-ftp.git'
-- 'cd git-ftp'
-- 'git checkout 1.1.0'
-- 'sudo make install'
 script:
+- 'git config git-ftp.url ftp://${password}''
+- 'git config git-ftp.user ${username}''
+- 'git config git-ftp.password ${password}''
 - 'git clone https://github.com/itoktoni/travis.git'
 - 'dir'
 - 'cd travis'
-- 'git ftp push --user ${username} --passwd ${password} ftp://ptibm.id/public_html/apps/demo/travis/'
+- 'git ftp init'
