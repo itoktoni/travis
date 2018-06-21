@@ -1,14 +1,10 @@
-language: node_js
-node_js:
-  - node
-branches:
-  only:
-    - master
+install:
+- 'git clone https://github.com/git-ftp/git-ftp.git'
+- 'cd git-ftp'
+- 'git checkout 1.1.0'
+- 'sudo make install'
 script:
-  - npm run build
-deploy:
-  skip_cleanup: true
-  provider: script
-  script: node deploy.js
-  on:
-    branch: master
+- 'git clone https://github.com/compwj/travis-ci-deploy-ftp.git'
+- 'dir'
+- 'cd travis-ci-deploy-ftp'
+- 'git ftp push --user $username --passwd $password ftp://ptibm.id/apps/demo/travis'
