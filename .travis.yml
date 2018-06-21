@@ -1,13 +1,9 @@
-install:
-- git clone https://github.com/git-ftp/git-ftp.git
-- cd git-ftp
-- git checkout 1.1.0
-- sudo make install
-script:
-- git clone https://github.com/itoktoni/travis.git
-- dir
-- cd travis
-- git config git-ftp.url "ftp://ptibm.id/apps/demo/travis"
-- git config git-ftp.user "itoktoni@ptibm.id"
-- git config git-ftp.password "0215443294"
-- git ftp init
+language: node_js
+node_js:
+  - "0.11"
+# whitelist
+branches:
+  only:
+    - master
+after_success:
+  - ./deploy.sh 
