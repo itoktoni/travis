@@ -8,4 +8,6 @@ before_script:
 script:
 - git clone https://github.com/itoktoni/travis.git
 after_success:
-- ncftpput -R -v -u "itoktoni@ptibm.id" -p "0215443294" ftp.ptibm.id /apps/demo/travis/ travis/*
+- ncftpput -R -v -u $username -p $password ftp.ptibm.id /apps/demo/travis/ travis/*
+notifications:
+  email: false
