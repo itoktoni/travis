@@ -1,4 +1,4 @@
-before_install:
+before_script:
   - sudo apt-get update
   - sudo apt-get install apt-utils -y
   - sudo apt-get install ncftp -y 
