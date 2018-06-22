@@ -1,7 +1,11 @@
+language: php
+php:
+   - hhvm
 before_script:
   - sudo apt-get update
   - sudo apt-get install apt-utils -y
   - sudo apt-get install ncftp -y 
 script:
 - git clone https://github.com/itoktoni/travis.git
+after_success:
 - ncftpput -R -v -u "itoktoni@ptibm.id" -p "0215443294" ftp.ptibm.id /apps/demo/travis/ travis/*
